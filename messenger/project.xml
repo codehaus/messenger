@@ -34,14 +34,26 @@
   <repository>
     <connection>scm:cvs:pserver:anonymous@cvs.codehaus.org:/cvsroot/messenger:messenger</connection>
     <developerConnection>scm:cvs:ext:${maven.username}@cvs.codehaus.org:/cvsroot/messenger:messenger</developerConnection>
-    <url>http://cvs.activemq.codehaus.org/cvsweb.cgi/activemq/</url>
+    <url>http://cvs.messenger.codehaus.org/cvsweb.cgi/messenger/</url>
   </repository>
   
   <mailingLists>
     <mailingList>
       <name>Messenger Developer List</name>
-      <subscribe></subscribe>
-      <unsubscribe></unsubscribe>
+      <subscribe>dev-subscribe@messenger.codehaus.org</subscribe>
+      <unsubscribe>dev-unsubscribe@messenger.codehaus.org</unsubscribe>
+      <archive></archive>
+    </mailingList>
+    <mailingList>
+      <name>Messenger User List</name>
+      <subscribe>user-subscribe@messenger.codehaus.org</subscribe>
+      <unsubscribe>user-unsubscribe@messenger.codehaus.org</unsubscribe>
+      <archive></archive>
+    </mailingList>
+  	<mailingList>
+      <name>Messenger SCM List</name>
+      <subscribe>scm-subscribe@messenger.codehaus.org</subscribe>
+      <unsubscribe>scm-unsubscribe@messenger.codehaus.org</unsubscribe>
       <archive></archive>
     </mailingList>
   </mailingLists>
