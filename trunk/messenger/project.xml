@@ -56,8 +56,7 @@
       <unsubscribe>scm-unsubscribe@messenger.codehaus.org</unsubscribe>
       <archive>http://archive.messenger.codehaus.org/scm/</archive>
     </mailingList>
-  </mailingLists>
-  
+  </mailingLists>  
   
   <versions>
     <version>
@@ -75,7 +74,13 @@
       <email>james@coredevelopers.net</email>
       <organization>Core Developmers Network</organization>
     </developer>
-  </developers>
+    <developer>
+      <name>Nick Minutello</name>
+      <id>nminutello</id>
+      <email></email>
+      <organization></organization>
+    </developer>
+  	  </developers>
 
   <contributors>
   </contributors>
