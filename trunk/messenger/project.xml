@@ -28,7 +28,7 @@
   <issueTrackingUrl>http://jira.codehaus.org</issueTrackingUrl>
   
   <siteAddress>www.codehaus.org</siteAddress>
-  <siteDirectory>/home/projects/messenger/public_html</siteDirectory>
+  <siteDirectory>/home/projects/messenger/public_html/maven</siteDirectory>
   <distributionDirectory>/www/dist.codehaus.org/messenger/dist</distributionDirectory>
   
   <repository>
@@ -42,19 +42,19 @@
       <name>Messenger Developer List</name>
       <subscribe>dev-subscribe@messenger.codehaus.org</subscribe>
       <unsubscribe>dev-unsubscribe@messenger.codehaus.org</unsubscribe>
-      <archive></archive>
+      <archive>http://archive.messenger.codehaus.org/dev/</archive>
     </mailingList>
     <mailingList>
       <name>Messenger User List</name>
       <subscribe>user-subscribe@messenger.codehaus.org</subscribe>
       <unsubscribe>user-unsubscribe@messenger.codehaus.org</unsubscribe>
-      <archive></archive>
+      <archive>http://archive.messenger.codehaus.org/user/</archive>
     </mailingList>
   	<mailingList>
       <name>Messenger SCM List</name>
       <subscribe>scm-subscribe@messenger.codehaus.org</subscribe>
       <unsubscribe>scm-unsubscribe@messenger.codehaus.org</unsubscribe>
-      <archive></archive>
+      <archive>http://archive.messenger.codehaus.org/scm/</archive>
     </mailingList>
   </mailingLists>
   

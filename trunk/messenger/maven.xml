@@ -5,7 +5,8 @@
     <attainGoal name="clover"/>
   </preGoal>
 
-	
+  <goal name="dc" prereqs="clean, site:deploy, jar:deploy-snapshot"/>
+		
 	<!-- disable crap for now -->
 	<goal name="maven-linkcheck-plugin"/>
 	<goal name="maven-linkcheck-plugin:register"/>
