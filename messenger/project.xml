@@ -14,7 +14,7 @@
   </organization>
   <logo></logo>
 
-  <inceptionYear>2003</inceptionYear>
+  <inceptionYear>2004</inceptionYear>
   <package>org.codehaus.messenger</package>
   <shortDescription>Messenger is a pooling JMS facade making JMS easier to use</shortDescription>
 
