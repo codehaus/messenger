@@ -32,8 +32,8 @@
   <distributionDirectory>/www/dist.codehaus.org/messenger/dist</distributionDirectory>
   
   <repository>
-    <connection>scm:cvs:pserver:anonymous@cvs.codehaus.org:/cvsroot/messenger:messenger</connection>
-    <developerConnection>scm:cvs:ext:${maven.username}@cvs.codehaus.org:/cvsroot/messenger:messenger</developerConnection>
+    <connection>scm:cvs:pserver:anonymous@cvs.codehaus.org:/home/projects/messenger/scm:messenger</connection>
+    <developerConnection>scm:cvs:ext:${maven.username}@cvs.codehaus.org:/home/projects/messenger/scm:messenger</developerConnection>
     <url>http://cvs.messenger.codehaus.org/cvsweb.cgi/messenger/</url>
   </repository>
   
