@@ -31,9 +31,9 @@ import junit.textui.TestRunner;
  * Test case for queues
  * 
  * @author <a href="mailto:james@coredevelopers.net">James Strachan</a>
- * @version $Revision: 1.1 $
+ * @version $Revision: 1.2 $
  */
-public class TestQueues extends AbstractMessengerTest {
+public class TestQueues extends AbstractMessengerSupport {
 
     public static Test suite() {
         return new TestSuite(TestQueues.class);
