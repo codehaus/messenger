@@ -28,7 +28,7 @@ import javax.jms.TopicSession;
  * for implementation inheritence.
  * 
  * @author <a href="mailto:james@coredevelopers.net">James Strachan</a>
- * @version $Revision: 1.1 $
+ * @version $Revision: 1.2 $
  */
 public abstract class MessengerPoolSupport implements MessengerPool {
 
@@ -41,10 +41,6 @@ public abstract class MessengerPoolSupport implements MessengerPool {
         this.factory = factory;
     }
     
-    public Connection getConnection() throws JMSException {
-        return factory.getConnection();
-    }
-
     /**
      * @return
      */
@@ -73,12 +69,13 @@ public abstract class MessengerPoolSupport implements MessengerPool {
      */
     protected Messenger createMessenger() throws JMSException {
         // lets create a new one each time
+        Connection connection = factory.getConnection();
         Session session = factory.createSession();
         if (factory.isTopic()) {
-            return new TopicMessenger((TopicSession) session);
+            return new TopicMessenger(connection, (TopicSession) session);
         }
         else {
-            return new QueueMessenger((QueueSession) session);
+            return new QueueMessenger(connection, (QueueSession) session);
         }
     }
     

@@ -37,13 +37,16 @@ import org.apache.commons.logging.LogFactory;
  * a JMS ConnectionFactory instance to create the JMS Connection lazily</p>
  *
  * @author <a href="mailto:james@coredevelopers.net">James Strachan</a>
- * @version $Revision: 1.1 $
+ * @version $Revision: 1.2 $
  */
 public class SessionFactory {
 
     /** Logger */
     private static final Log log = LogFactory.getLog(SessionFactory.class);
 
+    /** Should we create a connection per messenger or just session per messager */
+    private boolean shareConnections = false;
+    
     /** The JMS connection used to create JMS sessions */
     private Connection connection;
 
@@ -144,9 +147,16 @@ public class SessionFactory {
 
     // Properties
     //-------------------------------------------------------------------------    
-    /** Returns the JMS connection used to create new sessions */
+    
+    /** 
+     * If we are sharing JMS connections across Messenger instances
+     * then this method will lazily create a connection and share it for
+     * all other sessions - otherwise we'll create a new connection each time
+     * 
+     * @return the JMS connection used to create new sessions 
+     */
     public Connection getConnection() throws JMSException {
-        if (connection == null) {
+        if (!shareConnections || connection == null) {
             setConnection(createConnection());
             connection.start();
         }
@@ -205,6 +215,26 @@ public class SessionFactory {
         this.transacted = transacted;
     }
 
+    /**
+     * Are we sharing connections across messenger isntances or do we create
+     * a new connection for each Messenger (which is the default)
+     * 
+     * @return
+     */
+    public boolean isShareConnections() {
+        return shareConnections;
+    }
+    
+    /**
+     * This method allows connections to be shared across messenger instances.
+     * The default is to create a new connection for each Messenger.
+     * 
+     * @param shareConnections
+     */
+    public void setShareConnections(boolean shareConnections) {
+        this.shareConnections = shareConnections;
+    }
+    
     /** Returns the JMS acknowledge mode used by the JMS sessions created by this session */
     public int getAcknowledgeMode() {
         return acknowlegeMode;

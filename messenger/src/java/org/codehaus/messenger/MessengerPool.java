@@ -17,7 +17,6 @@
  **/ 
 package org.codehaus.messenger;
 
-import javax.jms.Connection;
 import javax.jms.JMSException;
 
 /**
@@ -25,15 +24,9 @@ import javax.jms.JMSException;
  * use and hiding much of the threading and pooling.
  * 
  * @author <a href="mailto:james@coredevelopers.net">James Strachan</a>
- * @version $Revision: 1.1 $
+ * @version $Revision: 1.2 $
  */
 public interface MessengerPool {
-
-    /** 
-     * Returns the underlying JMS connection that any created Messenger instances 
-     * will use 
-     */
-    public Connection getConnection() throws JMSException;
 
     /** 
      * Closes this connection and any related Messenger instances

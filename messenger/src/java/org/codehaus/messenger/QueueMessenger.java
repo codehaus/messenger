@@ -17,6 +17,7 @@
  **/ 
 package org.codehaus.messenger;
 
+import javax.jms.Connection;
 import javax.jms.Destination;
 import javax.jms.JMSException;
 import javax.jms.Message;
@@ -33,7 +34,7 @@ import org.apache.commons.logging.LogFactory;
  * implementation for working with queues
  * 
  * @author <a href="mailto:james@coredevelopers.net">James Strachan</a>
- * @version $Revision: 1.1 $
+ * @version $Revision: 1.2 $
  */
 public class QueueMessenger extends MessengerSupport {
 
@@ -43,8 +44,8 @@ public class QueueMessenger extends MessengerSupport {
     private boolean noLocal = false;
     private String durableName;
 
-    public QueueMessenger(QueueSession session) {
-        super(session);
+    public QueueMessenger(Connection connection, QueueSession session) {
+        super(connection, session);
         this.session = session;
     }
 

@@ -20,6 +20,7 @@ package org.codehaus.messenger;
 import java.io.Serializable;
 
 import javax.jms.BytesMessage;
+import javax.jms.Connection;
 import javax.jms.Destination;
 import javax.jms.JMSException;
 import javax.jms.MapMessage;
@@ -35,7 +36,7 @@ import javax.jms.TextMessage;
  * use and hiding much of the threading and pooling.
  * 
  * @author <a href="mailto:james@coredevelopers.net">James Strachan</a>
- * @version $Revision: 1.1 $
+ * @version $Revision: 1.2 $
  */
 public interface Messenger {
 
@@ -89,6 +90,12 @@ public interface Messenger {
      * Returns the underlying JMS session this messenger will use
      */
     public Session getSession() throws JMSException;
+
+    /** 
+     * Returns the underlying JMS connection that this Messenger instance
+     * will use 
+     */
+    public Connection getConnection() throws JMSException;
 
 
     // Message factory methods
