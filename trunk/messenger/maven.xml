@@ -1,0 +1,21 @@
+<project default="java:jar" xmlns:j="jelly:core">
+
+  <preGoal name="site">
+    <attainGoal name="java:compile"/>
+    <attainGoal name="clover"/>
+  </preGoal>
+
+	
+	<!-- disable crap for now -->
+	<goal name="maven-linkcheck-plugin"/>
+	<goal name="maven-linkcheck-plugin:register"/>
+	<goal name="maven-linkcheck-plugin:report-real"/>
+
+<!--
+  <goal name="doc">
+    <attainGoal name="html2xdoc"/>
+    <attainGoal name="xdoc"/>
+  </goal>
+-->
+
+</project>

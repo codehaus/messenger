@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <pomVersion>3</pomVersion>
+  <name>Messenger</name>
+  <id>messenger</id>
+  <currentVersion>1.0</currentVersion>
+  
+  <organization>
+    <name>Protique, Ltd.</name>
+    <url>http://www.protique.org</url>
+    <!--
+    <logo>http:/www.protique.org/images/logo.gif</logo>
+    -->
+  </organization>
+  <logo></logo>
+
+  <inceptionYear>2003</inceptionYear>
+  <package>org.codehaus.messenger</package>
+  <shortDescription>Messenger is a pooling JMS facade making JMS easier to use</shortDescription>
+
+  <gumpRepositoryId>messenger</gumpRepositoryId>
+  
+  <description>
+  	Messenger is a pooling JMS facade making JMS easier to use
+  </description>
+  
+  <url>http://messenger.codehaus.org/</url>
+  <issueTrackingUrl>http://jira.codehaus.org</issueTrackingUrl>
+  
+  <siteAddress>www.codehaus.org</siteAddress>
+  <siteDirectory>/home/projects/messenger/public_html</siteDirectory>
+  <distributionDirectory>/www/dist.codehaus.org/messenger/dist</distributionDirectory>
+  
+  <repository>
+    <connection>scm:cvs:pserver:anonymous@cvs.codehaus.org:/cvsroot/messenger:messenger</connection>
+    <developerConnection>scm:cvs:ext:${maven.username}@cvs.codehaus.org:/cvsroot/messenger:messenger</developerConnection>
+    <url>http://cvs.codehaus.org/cgi-bin/viewcvs.cgi/messenger/messenger/</url>
+  </repository>
+  
+  <mailingLists>
+    <mailingList>
+      <name>Messenger Developer List</name>
+      <subscribe></subscribe>
+      <unsubscribe></unsubscribe>
+      <archive></archive>
+    </mailingList>
+  </mailingLists>
+  
+  
+  <versions>
+    <version>
+      <id>1.0-beta-1</id>
+      <name>1.0-beta-1</name>
+      <tag>1.0-beta-1</tag>
+    </version>
+  </versions>
+  <branches></branches>
+  
+  <developers>
+    <developer>
+      <name>James Strachan</name>
+      <id>jstrachan</id>
+      <email>james@coredevelopers.net</email>
+      <organization>Core Developmers Network</organization>
+    </developer>
+  </developers>
+
+  <contributors>
+  </contributors>
+
+  <dependencies>
+    <dependency>
+      <id>commons-logging</id>
+      <version>1.0.3</version>
+    </dependency>
+    <dependency>
+      <id>commons-collections</id>
+      <version>2.1</version>
+    </dependency>
+  	    <dependency>
+      <id>commons-pool</id>
+      <version>1.1</version>
+    </dependency>
+  	
+  	<!-- lets use freely distributable J2EE jars -->
+    <dependency>
+      <id>geronimo-spec+jms</id>
+      <version>DEV</version>
+    </dependency>
+    <dependency>
+      <id>geronimo-spec+jta</id>
+      <version>DEV</version>
+    </dependency>
+  	
+  	<!--
+  	<dependency>
+      <id>jms</id>
+      <version>1.0.2b</version>
+    </dependency>
+    <dependency>
+      <id>jta</id>
+      <version>1.0.1</version>
+    </dependency>
+    -->
+
+	<!-- lightweight JMS for unit testing --> 
+    <dependency>
+      <id>openjms</id>
+      <version>0.7.5</version>
+    </dependency>
+    <dependency>
+      <id>exolabcore</id>
+      <version>0.3.5</version>
+    </dependency>
+
+	<!-- jars for unit tests -->
+    <dependency>
+      <id>junit</id>
+      <version>3.8.1</version>
+    </dependency>
+
+  </dependencies>
+  
+  <build>
+    <nagEmailAddress>messenger-scm@codehaus.org</nagEmailAddress>
+    <sourceDirectory>src/java</sourceDirectory>
+    <unitTestSourceDirectory>src/test</unitTestSourceDirectory>
+    
+    <integrationUnitTestSourceDirectory/>
+    <aspectSourceDirectory/>
+    
+    <unitTest>
+      <resources>
+        <resource>
+          <directory>src/java</directory>
+          <includes>
+            <include>**/*.properties</include>
+          </includes>
+        </resource>
+      </resources>
+      <includes>
+        <include>**/Test*.java</include>
+      </includes>
+    </unitTest>
+
+    
+    <resources>
+<!--
+      <resource>
+        <directory>src/jar</directory>
+        <includes>
+          <include>**/*.properties</include>
+          <include>**/*.xml</include>
+        </includes>
+      </resource>
+-->
+    </resources>
+  </build>
+</project>
