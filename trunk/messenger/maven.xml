@@ -5,7 +5,8 @@
 
   <preGoal name="site:deploy">
     <attainGoal name="javadoc"/>
-    <attainGoal name="clover"/>
+    <attainGoal name="java:compile"/>
+  	<attainGoal name="clover"/>
   </preGoal>
 		
 	<!-- disable crap for now -->
