@@ -37,7 +37,7 @@ import org.apache.commons.logging.LogFactory;
  * @author <a href="mailto:james@coredevelopers.net">James Strachan</a>
  * @version $Revision: 1.1 $
  */
-public abstract class AbstractMessengerTest extends TestCase {
+public abstract class AbstractMessengerSupport extends TestCase {
 
     /** Logger */
     protected Log log = LogFactory.getLog(getClass());
@@ -52,7 +52,7 @@ public abstract class AbstractMessengerTest extends TestCase {
     protected long waitTime = 2 * 1000;
     protected volatile boolean receivedMessage;
 
-    public AbstractMessengerTest(String testName) {
+    public AbstractMessengerSupport(String testName) {
         super(testName);
     }
 

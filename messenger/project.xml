@@ -35,7 +35,7 @@
   <repository>
     <connection>scm:cvs:pserver:anonymous@cvs.codehaus.org:/cvsroot/messenger:messenger</connection>
     <developerConnection>scm:cvs:ext:${maven.username}@cvs.codehaus.org:/cvsroot/messenger:messenger</developerConnection>
-    <url>http://cvs.codehaus.org/cgi-bin/viewcvs.cgi/messenger/messenger/</url>
+    <url>http://cvs.activemq.codehaus.org/cvsweb.cgi/activemq/</url>
   </repository>
   
   <mailingLists>
@@ -140,9 +140,12 @@
         </resource>
       </resources>
       <includes>
-        <include>**/Test*.java</include>
+        <include>**/*Test.java</include>
       </includes>
-    </unitTest>
+      <excludes>
+        <exclude>**/*Test.java</exclude>
+      </excludes>
+    	    </unitTest>
 
     
     <resources>
