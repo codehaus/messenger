@@ -20,6 +20,7 @@ package org.codehaus.messenger;
 import java.io.Serializable;
 
 import javax.jms.BytesMessage;
+import javax.jms.Connection;
 import javax.jms.JMSException;
 import javax.jms.MapMessage;
 import javax.jms.Message;
@@ -33,16 +34,22 @@ import javax.jms.TextMessage;
  * base class for implementation in heritence
  * 
  * @author <a href="mailto:james@coredevelopers.net">James Strachan</a>
- * @version $Revision: 1.1 $
+ * @version $Revision: 1.2 $
  */
 public abstract class MessengerSupport implements Messenger {
 
+    private Connection connection;
     private Session session;
 
-    public MessengerSupport(Session session) {
+    public MessengerSupport(Connection connection, Session session) {
+        this.connection = connection;
         this.session = session;
     }
 
+    public Connection getConnection() {
+        return connection;
+    }
+    
     public Session getSession() throws JMSException {
         return session;
     }

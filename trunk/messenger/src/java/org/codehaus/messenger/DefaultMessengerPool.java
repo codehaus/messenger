@@ -14,12 +14,13 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  * 
- **/ 
+ **/
 package org.codehaus.messenger;
 
 import java.io.Serializable;
 
 import javax.jms.BytesMessage;
+import javax.jms.Connection;
 import javax.jms.Destination;
 import javax.jms.JMSException;
 import javax.jms.MapMessage;
@@ -40,15 +41,15 @@ import org.apache.commons.pool.impl.GenericObjectPool;
  * MessengerPool which uses a SessionFactory to lazily create or lookup the
  * connection factory or connection object.
  * 
- * Messenger instances are pooled using Jakarta Commons Pool. You can pass in 
+ * Messenger instances are pooled using Jakarta Commons Pool. You can pass in
  * your own implementation or configuration of ObjectPool into this object on
- * construction, or let it create one with the defaults or use a GenericObjectPool
- * using the GenericObjectPool's Config object.
+ * construction, or let it create one with the defaults or use a
+ * GenericObjectPool using the GenericObjectPool's Config object.
  * 
  * @author <a href="mailto:james@coredevelopers.net">James Strachan </a>
- * @version $Revision: 1.1 $
+ * @version $Revision: 1.2 $
  */
-public class DefaultMessengerPool extends MessengerPoolSupport implements PoolableObjectFactory  {
+public class DefaultMessengerPool extends MessengerPoolSupport implements PoolableObjectFactory {
 
     private ObjectPool channel;
 
@@ -72,12 +73,12 @@ public class DefaultMessengerPool extends MessengerPoolSupport implements Poolab
 
     public Messenger getMessenger() throws JMSException {
         Messenger messenger = null;
-            try {
-                messenger = (Messenger) channel.borrowObject();
-            }
-            catch (Exception e1) {
-                // ignore exception
-            }
+        try {
+            messenger = (Messenger) channel.borrowObject();
+        }
+        catch (Exception e1) {
+            // ignore exception
+        }
         if (messenger == null) {
             messenger = makePooledMessenger();
         }
@@ -182,6 +183,10 @@ public class DefaultMessengerPool extends MessengerPoolSupport implements Poolab
 
         public void send(Destination destination, Message message) throws JMSException {
             delegate.send(destination, message);
+        }
+
+        public Connection getConnection() throws JMSException {
+            return delegate.getConnection();
         }
     }
 

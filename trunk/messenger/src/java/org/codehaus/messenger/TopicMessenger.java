@@ -17,6 +17,7 @@
  **/ 
 package org.codehaus.messenger;
 
+import javax.jms.Connection;
 import javax.jms.Destination;
 import javax.jms.JMSException;
 import javax.jms.Message;
@@ -33,7 +34,7 @@ import org.apache.commons.logging.LogFactory;
  * for working with Topics
  * 
  * @author <a href="mailto:james@coredevelopers.net">James Strachan</a>
- * @version $Revision: 1.1 $
+ * @version $Revision: 1.2 $
  */
 public class TopicMessenger extends MessengerSupport {
 
@@ -43,8 +44,8 @@ public class TopicMessenger extends MessengerSupport {
     private boolean noLocal = false;
     private String durableName;
 
-    public TopicMessenger(TopicSession session) {
-        super(session);
+    public TopicMessenger(Connection connection, TopicSession session) {
+        super(connection, session);
         this.session = session;
     }
 

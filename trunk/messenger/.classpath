@@ -15,13 +15,13 @@
   </classpathentry>
   <classpathentry kind="var" path="MAVEN_REPO/commons-pool/jars/commons-pool-1.1.jar">
   </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/jms/jars/jms-1.0.2b.jar">
+  <classpathentry kind="var" path="MAVEN_REPO/geronimo-spec/jars/geronimo-spec-jms-DEV.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/geronimo-spec/jars/geronimo-spec-jta-DEV.jar">
   </classpathentry>
   <classpathentry kind="var" path="MAVEN_REPO/openjms/jars/openjms-0.7.5.jar">
   </classpathentry>
   <classpathentry kind="var" path="MAVEN_REPO/exolabcore/jars/exolabcore-0.3.5.jar">
-  </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/jta/jars/jta-1.0.1.jar">
   </classpathentry>
   <classpathentry kind="output" path="bin">
   </classpathentry>
