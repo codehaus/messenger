@@ -34,7 +34,7 @@
   <repository>
     <connection>scm:cvs:pserver:anonymous@cvs.messenger.codehaus.org:/home/projects/messenger/scm:messenger</connection>
     <developerConnection>scm:cvs:ext:${maven.username}@cvs.messenger.codehaus.org:/home/projects/messenger/scm:messenger</developerConnection>
-    <url>http://cvs.messenger.codehaus.org/cvsweb.cgi/messenger/</url>
+    <url>http://cvs.messenger.codehaus.org/messenger/</url>
   </repository>
   
   <mailingLists>
