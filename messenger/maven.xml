@@ -1,11 +1,12 @@
 <project default="java:jar" xmlns:j="jelly:core">
 
-  <preGoal name="site">
-    <attainGoal name="java:compile"/>
+  <goal name="default" prereqs="clean, test"/>
+  <goal name="dc" prereqs="clean, site:deploy, jar:deploy-snapshot"/>
+
+  <preGoal name="site:deploy">
+    <attainGoal name="javadoc"/>
     <attainGoal name="clover"/>
   </preGoal>
-
-  <goal name="dc" prereqs="clean, site:deploy, jar:deploy-snapshot"/>
 		
 	<!-- disable crap for now -->
 	<goal name="maven-linkcheck-plugin"/>
